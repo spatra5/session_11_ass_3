@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Angular App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script>
+		var myapp = angular.module("myapp", []);
+		myapp.controller("mycontroller", function($scope) {
+			$scope.greetmsg = "Hello World!!";
+			$scope.count = 0;
+			$scope.greetFunc = function() {
+				$scope.count++;
+				alert($scope.greetmsg);
+			};
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div ng-controller="mycontroller">
+			<h4>Count: {{ count }}</h4>
+			<button ng-dblclick="greetFunc()">Double click</button>
+		</div>
+	</div>	
+</body>
+</html>
